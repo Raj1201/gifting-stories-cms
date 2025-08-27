@@ -24,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="text-gray-800">
     <header class="bg-[#efe8e0] p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="home.php" class="text-3xl font-bold text-[#5C817C]">Gifting Stories</a>
+            <a href="/" class="text-3xl font-bold text-[#5C817C]">Gifting Stories</a>
             <nav class="hidden lg:flex space-x-8 items-center">
-                <a href="home.php" class="text-gray-700 hover:text-[#5C817C] transition duration-300">Home</a>
+                <a href="/" class="text-gray-700 hover:text-[#5C817C] transition duration-300">Home</a>
                 <a href="#" class="text-gray-700 hover:text-[#5C817C] transition duration-300">Make Your Own Hamper</a>
                 <a href="#" class="text-gray-700 hover:text-[#5C817C] transition duration-300">About Us</a>
-                <a href="home.php#contact" class="text-gray-700 hover:text-[#5C817C] transition duration-300">Contact Us</a>
+                <a href="/#contact" class="text-gray-700 hover:text-[#5C817C] transition duration-300">Contact Us</a>
             </nav>
         </div>
     </header>
