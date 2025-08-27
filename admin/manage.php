@@ -102,6 +102,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: manage.php?resource=' . urlencode($resource));
         exit;
     }
+    if ($action === 'delete') {
+        http_response_code(405);
+        die('Method Not Allowed');
+    }
 }
 
 if ($action === 'delete') {
@@ -137,7 +141,11 @@ if ($action === 'list') {
         }
         echo '<td class="px-3 py-2">';
         echo '<a class="text-blue-700 underline mr-2" href="manage.php?resource=' . urlencode($resource) . '&action=edit&id=' . (int)$r['id'] . '">Edit</a>';
-        echo '<a class="text-red-700 underline" href="manage.php?resource=' . urlencode($resource) . '&action=delete&id=' . (int)$r['id'] . '" onclick="return confirm(\'Delete this item?\')">Delete</a>';
+        echo '<form method="post" action="manage.php?resource=' . urlencode($resource) . '&action=delete" style="display:inline" onsubmit="return confirm(\'Delete this item?\')">';
+        csrf_input();
+        echo '<input type="hidden" name="id" value="' . (int)$r['id'] . '">';
+        echo '<button type="submit" class="text-red-700 underline">Delete</button>';
+        echo '</form>';
         echo '</td>';
         echo '</tr>';
     }
