@@ -83,6 +83,17 @@
             to { opacity: 1; }
         }
 
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .slider-dots-container {
             position: absolute;
             bottom: 20px;
@@ -438,7 +449,7 @@
             </section>
 
             <!-- Perfect Picks Section -->
-            <section class="py-16 bg-white">
+            <section class="py-16 bg-white animate-on-scroll">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
@@ -477,7 +488,7 @@
             </section>
 
             <!-- Curated Gift Boxes Section -->
-            <section class="py-16 bg-white">
+            <section class="py-16 bg-white animate-on-scroll">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12"><?= htmlspecialchars(cms_setting('curated_subtitle', 'Explore premium gift hampers thoughtfully curated to suit every occasion, with gourmet delights, elegant packaging, and a personal touch that makes every gift memorable.')) ?></p>
@@ -541,8 +552,8 @@
             </section>
             
             <!-- Testimonials Section -->
-            <?php if (!empty($testimonials)): ?>
-<section class="py-16 bg-white">
+<?php if (!empty($testimonials)): ?>
+<section class="py-16 bg-white animate-on-scroll">
   <div class="container mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
     <div class="swiper testimonial-slider">
@@ -559,7 +570,7 @@
     </div>
   </div>
 </section>
-<?php else: ?><section class="py-16 bg-white">
+<?php else: ?><section class="py-16 bg-white animate-on-scroll">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
                     <div class="swiper testimonial-slider">
@@ -588,7 +599,7 @@
             </section><?php endif; ?>
 
             <!-- Call to Action Section -->
-            <section class="bg-white py-16">
+            <section class="bg-white py-16 animate-on-scroll">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Ready to start your gifting story?</h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
@@ -603,8 +614,8 @@
 
         <!-- Products Page -->
         <div id="products-page" class="fade-in">
-            <?php if (!empty($products)): ?>
-<section class="py-16">
+<?php if (!empty($products)): ?>
+<section class="py-16 animate-on-scroll">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -619,7 +630,7 @@
     </div>
   </div>
 </section>
-<?php else: ?><section class="py-16">
+<?php else: ?><section class="py-16 animate-on-scroll">
                 <div class="container mx-auto px-4">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -828,6 +839,19 @@
                     lastStarTime = now;
                 }
             });
+
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                    } else {
+                        entry.target.classList.remove('animate-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
         });
     </script>
 
