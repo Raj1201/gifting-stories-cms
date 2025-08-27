@@ -87,6 +87,17 @@
             to { opacity: 1; }
         }
 
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .slider-dots-container {
             position: absolute;
             bottom: 20px;
@@ -444,6 +455,9 @@
             </section>
 
             <!-- Perfect Picks Section -->
+            <section class="py-16 bg-white animate-on-scroll">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
             <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-3xl font-semibold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
@@ -483,6 +497,9 @@
             </section>
 
             <!-- Curated Gift Boxes Section -->
+            <section class="py-16 bg-white animate-on-scroll">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
             <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-3xl font-semibold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
@@ -547,6 +564,10 @@
             </section>
             
             <!-- Testimonials Section -->
+<?php if (!empty($testimonials)): ?>
+<section class="py-16 bg-white animate-on-scroll">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
             <?php if (!empty($testimonials)): ?>
 <section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 text-center">
@@ -565,6 +586,10 @@
     </div>
   </div>
 </section>
+<?php else: ?>
+<section class="py-16 bg-white animate-on-scroll">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
 <?php else: ?><section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-3xl font-semibold mb-12 text-gray-800">What Our Customers Say</h2>
@@ -591,9 +616,13 @@
                         </div>
                     </div>
                 </div>
-            </section><?php endif; ?>
+            </section>
+<?php endif; ?>
 
             <!-- Call to Action Section -->
+            <section class="bg-white py-16 animate-on-scroll">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Ready to start your gifting story?</h2>
             <section class="bg-white py-16">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-3xl font-semibold mb-4 text-gray-800">Ready to start your gifting story?</h2>
@@ -609,6 +638,10 @@
 
         <!-- Products Page -->
         <div id="products-page" class="fade-in">
+<?php if (!empty($products)): ?>
+<section class="py-16 animate-on-scroll">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
             <?php if (!empty($products)): ?>
 <section class="py-16">
   <div class="max-w-7xl mx-auto px-4">
@@ -625,6 +658,10 @@
     </div>
   </div>
 </section>
+<?php else: ?>
+<section class="py-16 animate-on-scroll">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
 <?php else: ?><section class="py-16">
                 <div class="max-w-7xl mx-auto px-4">
                     <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Our Complete Collection</h2>
@@ -653,13 +690,16 @@
                         <!-- Product Card 4 -->
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+4" alt="Product 4" class="w-full h-64 object-cover mb-4 rounded-xl">
+                            <h3 class="text-lg font-semibold mb-1">The Desk Companion</h3>
+                            <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>
                             <h3 class="text-xl font-semibold mb-1">The Desk Companion</h3>
                             <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>p>
                             <span class="text-xl font-bold text-[#5C817C]">₹1,500</span>
                         </div>
                     </div>
                 </div>
-            </section><?php endif; ?>
+            </section>
+<?php endif; ?>
         </div>
 
     </main>
@@ -834,6 +874,19 @@
                     lastStarTime = now;
                 }
             });
+
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                    } else {
+                        entry.target.classList.remove('animate-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
         });
     </script>
 
