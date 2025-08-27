@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">Thank you for your enquiry!</div>
         <?php endif; ?>
         <h1 class="text-2xl font-semibold mb-6 text-center">Send us an Enquiry</h1>
-        <form action="enquiry.php" method="POST" class="max-w-xl mx-auto space-y-4">
+        <form action="/enquiry" method="POST" class="max-w-xl mx-auto space-y-4">
             <div>
                 <label for="name" class="block text-sm font-medium mb-1">Name</label>
                 <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-2" />

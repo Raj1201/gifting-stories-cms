@@ -333,7 +333,7 @@
 
     <!-- Announcement Bar -->
     <div class="bg-[#2a4e4a] text-white text-center py-2 text-sm font-light tracking-wide">
-        We do bulk & corporate gifting too. <a href="enquiry.php" class="underline hover:text-gray-200">Enquire Now</a>
+        We do bulk & corporate gifting too. <a href="/enquiry" class="underline hover:text-gray-200">Enquire Now</a>
     </div>
 
     <!-- Header & Navigation -->
