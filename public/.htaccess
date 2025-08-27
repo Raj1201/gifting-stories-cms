@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
+RewriteCond %{THE_REQUEST} \s/(index|home)\.php[\s?] [NC]
+RewriteRule ^ %1? [R=301,L]
+RewriteRule ^$ index.php [L]
