@@ -564,33 +564,26 @@
             </section>
             
             <!-- Testimonials Section -->
-<?php if (!empty($testimonials)): ?>
-<section class="py-16 bg-white animate-on-scroll">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
             <?php if (!empty($testimonials)): ?>
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-semibold mb-12 text-gray-800">What Our Customers Say</h2>
-    <div class="swiper testimonial-slider">
-      <div class="swiper-wrapper">
-        <?php foreach ($testimonials as $t): ?>
-        <div class="swiper-slide">
-          <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
-            <p class="italic text-gray-600 mb-4">"<?php echo htmlspecialchars($t['quote']); ?>"</p>
-            <p class="font-semibold text-gray-800">- <?php echo htmlspecialchars($t['author']); ?></p>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </div>
-</section>
-<?php else: ?>
-<section class="py-16 bg-white animate-on-scroll">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
-<?php else: ?><section class="py-16 bg-white">
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-semibold mb-12 text-gray-800">What Our Customers Say</h2>
+                    <div class="swiper testimonial-slider">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($testimonials as $t): ?>
+                            <div class="swiper-slide">
+                                <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                                    <p class="italic text-gray-600 mb-4">"<?php echo htmlspecialchars($t['quote']); ?>"</p>
+                                    <p class="font-semibold text-gray-800">- <?php echo htmlspecialchars($t['author']); ?></p>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php else: ?>
+            <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-3xl font-semibold mb-12 text-gray-800">What Our Customers Say</h2>
                     <div class="swiper testimonial-slider">
@@ -617,7 +610,7 @@
                     </div>
                 </div>
             </section>
-<?php endif; ?>
+            <?php endif; ?>
 
             <!-- Call to Action Section -->
             <section class="bg-white py-16 animate-on-scroll">
@@ -638,31 +631,24 @@
 
         <!-- Products Page -->
         <div id="products-page" class="fade-in">
-<?php if (!empty($products)): ?>
-<section class="py-16 animate-on-scroll">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
             <?php if (!empty($products)): ?>
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Our Complete Collection</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <?php foreach ($products as $p): ?>
-      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
-        <img src="<?php echo htmlspecialchars($p['image_url']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="w-full h-64 object-cover mb-4 rounded-xl">
-        <h3 class="text-xl font-semibold mb-1"><?php echo htmlspecialchars($p['name']); ?></h3>
-        <p class="text-gray-600 mb-2"><?php echo htmlspecialchars($p['description']); ?></p>
-        <span class="text-xl font-bold text-[#5C817C]">₹<?php echo number_format((float)$p['price']); ?></span>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-<?php else: ?>
-<section class="py-16 animate-on-scroll">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Complete Collection</h2>
-<?php else: ?><section class="py-16">
+            <section class="py-16">
+                <div class="max-w-7xl mx-auto px-4">
+                    <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Our Complete Collection</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <?php foreach ($products as $p): ?>
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
+                            <img src="<?php echo htmlspecialchars($p['image_url']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="w-full h-64 object-cover mb-4 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-1"><?php echo htmlspecialchars($p['name']); ?></h3>
+                            <p class="text-gray-600 mb-2"><?php echo htmlspecialchars($p['description']); ?></p>
+                            <span class="text-xl font-bold text-[#5C817C]">₹<?php echo number_format((float)$p['price']); ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
+            <?php else: ?>
+            <section class="py-16">
                 <div class="max-w-7xl mx-auto px-4">
                     <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Our Complete Collection</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -690,16 +676,14 @@
                         <!-- Product Card 4 -->
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+4" alt="Product 4" class="w-full h-64 object-cover mb-4 rounded-xl">
-                            <h3 class="text-lg font-semibold mb-1">The Desk Companion</h3>
-                            <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>
                             <h3 class="text-xl font-semibold mb-1">The Desk Companion</h3>
-                            <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>p>
+                            <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>
                             <span class="text-xl font-bold text-[#5C817C]">₹1,500</span>
                         </div>
                     </div>
                 </div>
             </section>
-<?php endif; ?>
+            <?php endif; ?>
         </div>
 
     </main>
