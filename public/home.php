@@ -415,17 +415,18 @@
             <section class="hero-section">
                 <?php
                 // Loop through the banners and display them
-                $desktop_banners = ['BANNER_01.png', 'BANNER_02.png', 'BANNER_03.png', 'BANNER_04.png'];
-                $mobile_banners = ['BANNER_01_MOBILE.png', 'BANNER_02_MOBILE.png', 'BANNER_03_MOBILE.png', 'BANNER_04_MOBILE.png'];
-                $banner_count = count($desktop_banners);
-                for ($i = 0; $i < $banner_count; $i++):
+                $banner_count = count($banners);
+                foreach ($banners as $i => $banner):
                     $active_class = ($i === 0) ? 'active' : '';
+                    $desktop_image = htmlspecialchars($banner['desktop_image'] ?? '');
+                    $mobile_image = htmlspecialchars($banner['mobile_image'] ?? '');
+                    $link_url = htmlspecialchars($banner['link_url'] ?? '#');
                 ?>
                     <!-- The anchor tag makes the entire banner clickable. Update the 'href' with the desired destination. -->
-                    <a href="#" class="clickable-hero-link">
-                        <img src="" alt="Hero Image <?= $i + 1 ?>" class="hero-image <?= $active_class ?>" data-desktop-src="/images/<?= $desktop_banners[$i] ?>" data-mobile-src="/images/<?= $mobile_banners[$i] ?>" />
+                    <a href="<?= $link_url ?>" class="clickable-hero-link">
+                        <img src="" alt="Hero Image <?= $i + 1 ?>" class="hero-image <?= $active_class ?>" data-desktop-src="/images/<?= $desktop_image ?>" data-mobile-src="/images/<?= $mobile_image ?>" />
                     </a>
-                <?php endfor; ?>
+                <?php endforeach; ?>
                 <!-- Slider Dots -->
                 <div class="slider-dots-container">
                     <?php for ($i = 0; $i < $banner_count; $i++): ?>
