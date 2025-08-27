@@ -10,6 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -543,31 +545,43 @@
 <section class="py-16 bg-white">
   <div class="container mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <?php foreach ($testimonials as $t): ?>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
-          <p class="italic text-gray-600 mb-4">"<?php echo htmlspecialchars($t['quote']); ?>"</p>
-          <p class="font-semibold text-gray-800">- <?php echo htmlspecialchars($t['author']); ?></p>
+    <div class="swiper testimonial-slider">
+      <div class="swiper-wrapper">
+        <?php foreach ($testimonials as $t): ?>
+        <div class="swiper-slide">
+          <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+            <p class="italic text-gray-600 mb-4">"<?php echo htmlspecialchars($t['quote']); ?>"</p>
+            <p class="font-semibold text-gray-800">- <?php echo htmlspecialchars($t['author']); ?></p>
+          </div>
         </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
 </section>
 <?php else: ?><section class="py-16 bg-white">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What Our Customers Say</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
-                            <p class="italic text-gray-600 mb-4">"The most beautifully curated gift box I have ever received! The attention to detail is simply incredible. I will definitely be a returning customer."</p>
-                            <p class="font-semibold text-gray-800">- Jane D.</p>
-                        </div>
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
-                            <p class="italic text-gray-600 mb-4">"Gifting Stories made my corporate gifting process so easy and professional. The team was a pleasure to work with, and the recipients were thrilled!"</p>
-                            <p class="font-semibold text-gray-800">- Mark S.</p>
-                        </div>
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
-                            <p class="italic text-gray-600 mb-4">"I love the 'build a box' feature. It allowed me to create a truly personal gift for my best friend. Highly recommend!"</p>
-                            <p class="font-semibold text-gray-800">- Sarah B.</p>
+                    <div class="swiper testimonial-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                                    <p class="italic text-gray-600 mb-4">"The most beautifully curated gift box I have ever received! The attention to detail is simply incredible. I will definitely be a returning customer."</p>
+                                    <p class="font-semibold text-gray-800">- Jane D.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                                    <p class="italic text-gray-600 mb-4">"Gifting Stories made my corporate gifting process so easy and professional. The team was a pleasure to work with, and the recipients were thrilled!"</p>
+                                    <p class="font-semibold text-gray-800">- Mark S.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                                    <p class="italic text-gray-600 mb-4">"I love the 'build a box' feature. It allowed me to create a truly personal gift for my best friend. Highly recommend!"</p>
+                                    <p class="font-semibold text-gray-800">- Sarah B.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -669,6 +683,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Mobile menu toggle functionality
@@ -710,6 +726,24 @@
                 mobileSidebar.classList.remove('open');
                 mobileOverlay.classList.remove('open');
             };
+
+            // Testimonials slider
+            if (document.querySelector('.testimonial-slider')) {
+                new Swiper('.testimonial-slider', {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    autoplay: {
+                        delay: 30000,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+            }
 
             // Hero image slideshow functionality
             const heroImages = document.querySelectorAll('.hero-image');
