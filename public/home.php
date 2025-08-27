@@ -424,7 +424,7 @@
                 ?>
                     <!-- The anchor tag makes the entire banner clickable. Update the 'href' with the desired destination. -->
                     <a href="<?= $link_url ?>" class="clickable-hero-link">
-                        <img src="" alt="Hero Image <?= $i + 1 ?>" class="hero-image <?= $active_class ?>" data-desktop-src="/images/<?= $desktop_image ?>" data-mobile-src="/images/<?= $mobile_image ?>" />
+                        <img src="" alt="Hero Image <?= $i + 1 ?>" class="hero-image <?= $active_class ?>" data-desktop-src="<?= BASE_URL ?>images/<?= $desktop_image ?>" data-mobile-src="<?= BASE_URL ?>images/<?= $mobile_image ?>" />
                     </a>
                 <?php endforeach; ?>
                 <!-- Slider Dots -->
@@ -442,31 +442,31 @@
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
                         <div class="card-animate">
                             <div class="circle-image-container">
-                                <img src="/images/For_Her_01.png" alt="Gifts for Her" class="circle-image">
+                                <img src="<?= BASE_URL ?>images/For_Her_01.png" alt="Gifts for Her" class="circle-image">
                             </div>
                             <p class="mt-4 font-semibold text-gray-800">For Her</p>
                         </div>
                         <div class="card-animate">
                             <div class="circle-image-container">
-                                <img src="/images/For_Him_01.png" alt="Gifts for Him" class="circle-image">
+                                <img src="<?= BASE_URL ?>images/For_Him_01.png" alt="Gifts for Him" class="circle-image">
                             </div>
                             <p class="mt-4 font-semibold text-gray-800">For Him</p>
                         </div>
                         <div class="card-animate">
                             <div class="circle-image-container">
-                                <img src="/images/For_Couple_01.png" alt="Gifts for Couple" class="circle-image">
+                                <img src="<?= BASE_URL ?>images/For_Couple_01.png" alt="Gifts for Couple" class="circle-image">
                             </div>
                             <p class="mt-4 font-semibold text-gray-800">For Couple</p>
                         </div>
                         <div class="card-animate">
                             <div class="circle-image-container">
-                                <img src="/images/For_Parents_01.png" alt="Gifts for Parents" class="circle-image">
+                                <img src="<?= BASE_URL ?>images/For_Parents_01.png" alt="Gifts for Parents" class="circle-image">
                             </div>
                             <p class="mt-4 font-semibold text-gray-800">For Parents</p>
                         </div>
                         <div class="card-animate">
                             <div class="circle-image-container">
-                                <img src="/images/For_Kids_01.png" alt="Gifts for Kids" class="circle-image">
+                                <img src="<?= BASE_URL ?>images/For_Kids_01.png" alt="Gifts for Kids" class="circle-image">
                             </div>
                             <p class="mt-4 font-semibold text-gray-800">For Kids</p>
                         </div>
@@ -483,7 +483,7 @@
                         <!-- Birthday -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/birthday.png" alt="Birthday Gifts">
+                                <img src="<?= BASE_URL ?>images/birthday.png" alt="Birthday Gifts">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Birthday</a>
@@ -492,7 +492,7 @@
                         <!-- Housewarming Gifts -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/housewarming.png" alt="Housewarming Gifts">
+                                <img src="<?= BASE_URL ?>images/housewarming.png" alt="Housewarming Gifts">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Housewarming Gifts</a>
@@ -501,7 +501,7 @@
                         <!-- Baby Shower -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/baby_shower.png" alt="Baby Shower Gifts">
+                                <img src="<?= BASE_URL ?>images/baby_shower.png" alt="Baby Shower Gifts">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Baby Shower</a>
@@ -510,7 +510,7 @@
                         <!-- Wedding / Anniversary -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/wedding_01.png" alt="Wedding and Anniversary Gifts">
+                                <img src="<?= BASE_URL ?>images/wedding_01.png" alt="Wedding and Anniversary Gifts">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Wedding / Anniversary</a>
@@ -519,7 +519,7 @@
                         <!-- Self Care Hampers -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/self.png" alt="Self Care Hampers">
+                                <img src="<?= BASE_URL ?>images/self.png" alt="Self Care Hampers">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Self Care Hampers</a>
@@ -528,7 +528,7 @@
                         <!-- Thank You Gifts -->
                         <div class="collection-item">
                             <a href="#">
-                                <img src="/images/thankyou.png" alt="Thank You Gifts">
+                                <img src="<?= BASE_URL ?>images/thankyou.png" alt="Thank You Gifts">
                             </a>
                             <div class="collection-label">
                                 <a href="#" class="font-semibold text-gray-800">Thank You Gifts</a>
