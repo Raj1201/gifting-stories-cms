@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/partials/_header.php';
+require_once '../includes/bootstrap.php';
+require_login();
 require_once __DIR__ . '/../includes/csrf.php';
 
 $resources = [
@@ -168,7 +169,7 @@ if ($action === 'create' || $action === 'edit') {
         } else {
             echo '<input type="' . htmlspecialchars($type) . '" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars((string)$val) . '" class="border rounded w-full p-2">';
         }
-        if ($resource === 'banners' && $name in ['desktop_image','mobile_image']) {
+        if ($resource === 'banners' && in_array($name, ['desktop_image','mobile_image'], true)) {
             echo '<div class="text-xs text-gray-500 mt-1">Store only the file name (e.g., <code>BANNER_01.png</code>). Files must exist under <code>/images</code> on your server.</div>';
         }
         echo '</div>';
