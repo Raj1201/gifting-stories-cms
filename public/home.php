@@ -476,8 +476,8 @@
             <!-- Curated Gift Boxes Section -->
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4 text-center">
-                    \1<?= htmlspecialchars(cms_setting("curated_title","Elegant Gifts for Every Celebration")) ?>\2
-                    \1<?= htmlspecialchars(cms_setting("curated_subtitle","Explore premium gift hampers thoughtfully curated to suit every occasion, with gourmet delights, elegant packaging, and a personal touch that makes every gift memorable.")) ?></p>
+                    <h2><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
+                    <p><?= htmlspecialchars(cms_setting('curated_subtitle', 'Explore premium gift hampers thoughtfully curated to suit every occasion, with gourmet delights, elegant packaging, and a personal touch that makes every gift memorable.')) ?></p>
                     <div class="collection-grid">
                         <!-- Birthday -->
                         <div class="collection-item">
