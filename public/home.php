@@ -456,11 +456,8 @@
 
             <!-- Perfect Picks Section -->
             <section class="py-16 bg-white animate-on-scroll">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
-            <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
-                    <h2 class="text-3xl font-semibold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Perfect Picks for Every Relationship</h2>
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
                         <div class="card-animate">
                             <div class="circle-image-container">
@@ -498,11 +495,8 @@
 
             <!-- Curated Gift Boxes Section -->
             <section class="py-16 bg-white animate-on-scroll">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
-            <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 text-center">
-                    <h2 class="text-3xl font-semibold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800"><?= htmlspecialchars(cms_setting('curated_title', 'Elegant Gifts for Every Celebration')) ?></h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12"><?= htmlspecialchars(cms_setting('curated_subtitle', 'Explore premium gift hampers thoughtfully curated to suit every occasion, with gourmet delights, elegant packaging, and a personal touch that makes every gift memorable.')) ?></p>
                     <div class="collection-grid">
                         <!-- Birthday -->
