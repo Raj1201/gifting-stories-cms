@@ -3,6 +3,7 @@ require_once __DIR__ . '/../includes/bootstrap.php';
 
 $submitted = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    csrf_verify();
     // Optional: handle enquiry submission (e.g., save to database or send email)
     $submitted = true;
 }
@@ -40,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
         <h1 class="text-2xl font-semibold mb-6 text-center">Send us an Enquiry</h1>
         <form action="/enquiry" method="POST" class="max-w-xl mx-auto space-y-4">
+            <?php csrf_input(); ?>
             <div>
                 <label for="name" class="block text-sm font-medium mb-1">Name</label>
                 <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-2" />
