@@ -320,13 +320,13 @@
         // Placeholder data for mobile category slider (defaults only; can be overridden by CMS)
         if (!isset($mobile_categories) || empty($mobile_categories)) {
             $mobile_categories = [
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Best+Seller', 'label' => 'Bestseller Gifts', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Festive+Hampers', 'label' => 'Festive Hampers', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Birthday', 'label' => 'Birthday Hampers', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Anniversary', 'label' => 'Anniversary Gifts', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Gourmet', 'label' => 'Gourmet Edibles', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=Self+Care', 'label' => 'Self Care Hampers', 'url' => '#'],
-                ['image' => 'https://placehold.co/100x100/D4B08F/fff?text=New+Arrivals', 'label' => 'New Arrivals', 'url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Best+Seller', 'label' => 'Bestseller Gifts', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Festive+Hampers', 'label' => 'Festive Hampers', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Birthday', 'label' => 'Birthday Hampers', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Anniversary', 'label' => 'Anniversary Gifts', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Gourmet', 'label' => 'Gourmet Edibles', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=Self+Care', 'label' => 'Self Care Hampers', 'link_url' => '#'],
+                ['image_url' => 'https://placehold.co/100x100/D4B08F/fff?text=New+Arrivals', 'label' => 'New Arrivals', 'link_url' => '#'],
             ];
         }
     ?>
@@ -401,9 +401,9 @@
         <section class="lg:hidden">
             <div class="mobile-category-slider">
                 <?php foreach ($mobile_categories as $category): ?>
-                    <a href="<?= $category['url'] ?>" class="mobile-category-item">
-                        <img src="<?= $category['image'] ?>" alt="<?= $category['label'] ?>" class="mx-auto">
-                        <p class="text-xs font-semibold text-gray-800"><?= $category['label'] ?></p>
+                    <a href="<?= htmlspecialchars($category['link_url']) ?>" class="mobile-category-item">
+                        <img src="<?= htmlspecialchars($category['image_url']) ?>" alt="<?= htmlspecialchars($category['label']) ?>" class="mx-auto">
+                        <p class="text-xs font-semibold text-gray-800"><?= htmlspecialchars($category['label']) ?></p>
                     </a>
                 <?php endforeach; ?>
             </div>
