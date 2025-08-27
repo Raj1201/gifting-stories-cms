@@ -7,24 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Optional: handle enquiry submission (e.g., save to database or send email)
     $submitted = true;
 }
+
+$title = 'Enquiry - Gifting Stories';
+require __DIR__ . '/partials/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquiry - Gifting Stories</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8F7F4; }
-        .nav-link {
-            @apply text-gray-700 hover:text-[#5C817C] transition duration-300 ease-in-out font-medium;
-        }
-    </style>
-</head>
 <body class="text-gray-800">
     <header class="bg-[#efe8e0] p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
@@ -66,5 +52,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </form>
     </main>
-</body>
-</html>
+<?php require __DIR__ . '/partials/footer.php'; ?>
+
