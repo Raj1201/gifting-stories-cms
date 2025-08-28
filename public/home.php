@@ -3,7 +3,7 @@ $title = 'Gifting Stories - Curated Gift Boxes & Hampers';
 $scripts = ['/assets/js/home.js'];
 require __DIR__ . '/partials/header.php';
 ?>
-<body class="bg-gray-50">
+<body>
 
     <!-- PHP block for defining image paths -->
     <?php
@@ -41,23 +41,23 @@ require __DIR__ . '/partials/header.php';
     </div>
 
     <!-- Header & Navigation -->
-    <header class="bg-[#efe8e0] p-4 shadow-md sticky top-0 z-50">
+    <header class="bg-[var(--bg-light)] p-4 shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-[#5C817C]" onclick="navigateTo('home')">Gifting Stories</a>
+            <a href="#" class="text-3xl font-bold text-[var(--primary)]" onclick="navigateTo('home')">Gifting Stories</a>
             <div class="hidden lg:flex space-x-8 items-center">
                 <a href="#" class="nav-link">Make Your Own Hamper</a>
                 <a href="#" class="nav-link">About Us</a>
                 <a href="#" class="nav-link" onclick="navigateTo('contact')">Contact Us</a>
                 <div class="flex space-x-4 items-center text-xl">
-                    <a href="#" class="text-gray-700 hover:text-[#5C817C]"><i class="fas fa-search"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-[#5C817C]"><i class="fas fa-user"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-[#5C817C]"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
             <!-- Mobile Menu Button -->
             <div class="lg:hidden flex space-x-4 items-center text-xl">
-                <a href="#" class="text-gray-700 hover:text-[#5C817C]"><i class="fas fa-search"></i></a>
-                <a href="#" class="text-gray-700 hover:text-[#5C817C]"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-shopping-cart"></i></a>
                 <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -303,7 +303,7 @@ require __DIR__ . '/partials/header.php';
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                         Contact us today to create the perfect personalized gift box for any occasion.
                     </p>
-                    <a href="#" class="btn-primary !bg-[#5C817C] !text-white !hover:bg-[#4a6b66]">
+                    <a href="#" class="btn-primary text-white">
                         Contact Us
                     </a>
                 </div>
@@ -322,7 +322,7 @@ require __DIR__ . '/partials/header.php';
                             <img src="<?php echo htmlspecialchars($p['image_url']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="w-full h-64 object-cover mb-4 rounded-xl">
                             <h3 class="text-xl font-semibold mb-1"><?php echo htmlspecialchars($p['name']); ?></h3>
                             <p class="text-gray-600 mb-2"><?php echo htmlspecialchars($p['description']); ?></p>
-                            <span class="text-xl font-bold text-[#5C817C]">₹<?php echo number_format((float)$p['price']); ?></span>
+                            <span class="text-xl font-bold text-[var(--primary)]">₹<?php echo number_format((float)$p['price']); ?></span>
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -338,28 +338,28 @@ require __DIR__ . '/partials/header.php';
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+1" alt="Product 1" class="w-full h-64 object-cover mb-4 rounded-xl">
                             <h3 class="text-xl font-semibold mb-1">The Coffee Lovers Box</h3>
                             <p class="text-gray-600 mb-2">A perfect gift for any coffee aficionado.</p>
-                            <span class="text-xl font-bold text-[#5C817C]">₹1,200</span>
+                            <span class="text-xl font-bold text-[var(--primary)]">₹1,200</span>
                         </div>
                         <!-- Product Card 2 -->
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+2" alt="Product 2" class="w-full h-64 object-cover mb-4 rounded-xl">
                             <h3 class="text-xl font-semibold mb-1">Self-Care Spa Kit</h3>
                             <p class="text-gray-600 mb-2">Relax and rejuvenate with this luxurious box.</p>
-                            <span class="text-xl font-bold text-[#5C817C]">₹1,850</span>
+                            <span class="text-xl font-bold text-[var(--primary)]">₹1,850</span>
                         </div>
                         <!-- Product Card 3 -->
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+3" alt="Product 3" class="w-full h-64 object-cover mb-4 rounded-xl">
                             <h3 class="text-xl font-semibold mb-1">Gourmet Delight</h3>
                             <p class="text-gray-600 mb-2">A curated selection of artisanal snacks.</p>
-                            <span class="text-xl font-bold text-[#5C817C]">₹2,100</span>
+                            <span class="text-xl font-bold text-[var(--primary)]">₹2,100</span>
                         </div>
                         <!-- Product Card 4 -->
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-animate p-4">
                             <img src="https://placehold.co/400x400/D0D0D0/5C817C?text=Product+4" alt="Product 4" class="w-full h-64 object-cover mb-4 rounded-xl">
                             <h3 class="text-xl font-semibold mb-1">The Desk Companion</h3>
                             <p class="text-gray-600 mb-2">Perfect for a new colleague or a work anniversary.</p>
-                            <span class="text-xl font-bold text-[#5C817C]">₹1,500</span>
+                            <span class="text-xl font-bold text-[var(--primary)]">₹1,500</span>
                         </div>
                     </div>
                 </div>

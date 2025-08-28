@@ -1,6 +1,13 @@
+        :root {
+            --primary: #9F80D0;   /* lavender text/logo */
+            --accent:  #A86B3E;   /* brown circle/accents */
+            --bg-base: #EADBCF;   /* tan background */
+            --bg-light:#F4E8DA;   /* lighter tan sections */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
+            background-color: var(--bg-base);
             color: #333;
         }
         .hero-section {
@@ -52,10 +59,18 @@
         }
         
         .nav-link {
-            @apply text-gray-700 hover:text-[#5C817C] transition duration-300 ease-in-out font-medium;
+            @apply text-gray-700 hover:text-[var(--primary)] transition duration-300 ease-in-out font-medium;
         }
         .footer-link {
             @apply text-gray-400 hover:text-white transition duration-300;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #7F65B0;
         }
         /* Page specific content and animations */
         #home-page, #products-page, #contact-page {
@@ -101,14 +116,14 @@
             transition: background-color 0.3s ease-in-out;
         }
         .slider-dot.active {
-            background-color: #5C817C;
+            background-color: var(--primary);
         }
         .circle-image-container {
             width: 100%;
             max-width: 200px;
             height: 200px;
             overflow: hidden;
-            border: 2px solid #5C817C;
+            border: 2px solid var(--accent);
             margin: 0 auto;
             border-top-left-radius: 20%;
             border-top-right-radius: 20%;
@@ -222,7 +237,7 @@
             height: 100%;
             width: 75%;
             max-width: 300px;
-            background-color: #F8F7F4;
+            background-color: var(--bg-base);
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
             z-index: 60;
