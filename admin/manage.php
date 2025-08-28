@@ -55,6 +55,7 @@ $resources = [
       'label'      => ['label' => 'Label', 'type' => 'text'],
       'link_url'   => ['label' => 'Link URL', 'type' => 'text'],
       'image_url'  => ['label' => 'Image URL', 'type' => 'text'],
+      'menu_type'  => ['label' => 'Menu Type', 'type' => 'select', 'options' => ['link' => 'Link', 'dropdown' => 'Dropdown', 'mega' => 'Mega']],
       'parent_id'  => ['label' => 'Parent ID', 'type' => 'number'],
       'sort_order' => ['label' => 'Sort Order', 'type' => 'number'],
       'active'     => ['label' => 'Active', 'type' => 'checkbox'],
@@ -186,6 +187,13 @@ if ($action === 'create' || $action === 'edit') {
         } elseif ($type === 'checkbox') {
             $checked = ((string)$val === '1') ? 'checked' : '';
             echo '<input type="checkbox" name="' . htmlspecialchars($name) . '" value="1" ' . $checked . '>';
+        } elseif ($type === 'select') {
+            echo '<select name="' . htmlspecialchars($name) . '" class="border rounded w-full p-2">';
+            foreach ($meta['options'] as $optVal => $optLabel) {
+                $selected = ($optVal === $val) ? 'selected' : '';
+                echo '<option value="' . htmlspecialchars($optVal) . '" ' . $selected . '>' . htmlspecialchars($optLabel) . '</option>';
+            }
+            echo '</select>';
         } else {
             echo '<input type="' . htmlspecialchars($type) . '" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars((string)$val) . '" class="border rounded w-full p-2">';
         }

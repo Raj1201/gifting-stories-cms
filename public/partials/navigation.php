@@ -7,26 +7,17 @@ $nav = cms_get_navigation();
         <a href="/" class="text-3xl font-bold text-[var(--primary)]">Gifting Stories</a>
         <div class="hidden lg:flex space-x-8 items-center">
             <?php foreach ($nav as $item): ?>
-                <?php if (strcasecmp($item['label'], 'Our Products') === 0): ?>
-                    <?php
-                        $hampers = null;
-                        foreach ($item['children'] as $child) {
-                            if (strcasecmp($child['label'], 'Hampers') === 0) {
-                                $hampers = $child;
-                                break;
-                            }
-                        }
-                    ?>
+                <?php if ($item['menu_type'] === 'mega'): ?>
                     <div class="relative group">
                         <a href="<?= htmlspecialchars($item['link_url']) ?>" class="nav-link"><?= htmlspecialchars($item['label']) ?></a>
-                        <?php if ($hampers && !empty($hampers['children'])): ?>
+                        <?php if (!empty($item['children'])): ?>
                             <div class="menu-dropdown absolute left-0 mt-2 hidden group-hover:grid">
-                                <?php foreach ($hampers['children'] as $grandchild): ?>
-                                    <a href="<?= htmlspecialchars($grandchild['link_url']) ?>" class="menu-card">
-                                        <?php if (!empty($grandchild['image_url'])): ?>
-                                            <img src="<?= htmlspecialchars($grandchild['image_url']) ?>" alt="<?= htmlspecialchars($grandchild['label']) ?>">
+                                <?php foreach ($item['children'] as $child): ?>
+                                    <a href="<?= htmlspecialchars($child['link_url']) ?>" class="menu-card">
+                                        <?php if (!empty($child['image_url'])): ?>
+                                            <img src="<?= htmlspecialchars($child['image_url']) ?>" alt="<?= htmlspecialchars($child['label']) ?>">
                                         <?php endif; ?>
-                                        <span><?= htmlspecialchars($grandchild['label']) ?></span>
+                                        <span><?= htmlspecialchars($child['label']) ?></span>
                                     </a>
                                 <?php endforeach; ?>
                             </div>
@@ -80,14 +71,14 @@ $nav = cms_get_navigation();
     </div>
     <div class="flex flex-col space-y-2 py-2">
         <?php foreach ($nav as $item): ?>
-            <?php if (strcasecmp($item['label'], 'Our Products') === 0): ?>
+            <?php if (!empty($item['children'])): ?>
                 <details>
                     <summary class="sidebar-menu-item cursor-pointer flex justify-between items-center">
                         <?= htmlspecialchars($item['label']) ?>
                     </summary>
                     <div class="ml-4">
                         <?php foreach ($item['children'] as $child): ?>
-                            <?php if (strcasecmp($child['label'], 'Hampers') === 0 && !empty($child['children'])): ?>
+                            <?php if (!empty($child['children'])): ?>
                                 <details>
                                     <summary class="sidebar-menu-item cursor-pointer flex justify-between items-center">
                                         <?= htmlspecialchars($child['label']) ?>
