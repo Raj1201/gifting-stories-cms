@@ -42,7 +42,7 @@ function cms_get_products() {
 
 function cms_get_navigation() {
     global $pdo;
-    $stmt = $pdo->query('SELECT id, parent_id, label, link_url, image_url FROM navigation_items WHERE active = 1 ORDER BY sort_order ASC, id ASC');
+    $stmt = $pdo->query("SELECT id, parent_id, label, link_url, image_url, menu_type FROM navigation_items WHERE active = 1 ORDER BY sort_order ASC, id ASC");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $byId = [];
     foreach ($rows as $row) {
