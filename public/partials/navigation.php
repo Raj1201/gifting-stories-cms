@@ -71,7 +71,29 @@ $nav = cms_get_navigation();
     </div>
     <div class="flex flex-col space-y-2 py-2">
         <?php foreach ($nav as $item): ?>
-            <?php if (!empty($item['children'])): ?>
+            <?php if ($item['menu_type'] === 'mega'): ?>
+                <details>
+                    <summary class="sidebar-menu-item cursor-pointer flex justify-between items-center">
+                        <?= htmlspecialchars($item['label']) ?>
+                    </summary>
+                    <div class="ml-4">
+                        <?php foreach ($item['children'] as $child): ?>
+                            <details>
+                                <summary class="sidebar-menu-item cursor-pointer flex justify-between items-center">
+                                    <?= htmlspecialchars($child['label']) ?>
+                                </summary>
+                                <div class="ml-4">
+                                    <?php foreach ($child['children'] as $grandchild): ?>
+                                        <a href="<?= htmlspecialchars($grandchild['link_url']) ?>" class="sidebar-menu-item">
+                                            <?= htmlspecialchars($grandchild['label']) ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
+                            </details>
+                        <?php endforeach; ?>
+                    </div>
+                </details>
+            <?php elseif (!empty($item['children'])): ?>
                 <details>
                     <summary class="sidebar-menu-item cursor-pointer flex justify-between items-center">
                         <?= htmlspecialchars($item['label']) ?>
