@@ -40,64 +40,7 @@ require __DIR__ . '/partials/header.php';
         We do bulk & corporate gifting too. <a href="/enquiry" class="underline hover:text-gray-200">Enquire Now</a>
     </div>
 
-    <!-- Header & Navigation -->
-    <header class="bg-[var(--bg-light)] p-4 shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-[var(--primary)]" onclick="navigateTo('home')">Gifting Stories</a>
-            <div class="hidden lg:flex space-x-8 items-center">
-                <a href="#" class="nav-link">Make Your Own Hamper</a>
-                <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="nav-link" onclick="navigateTo('contact')">Contact Us</a>
-                <div class="flex space-x-4 items-center text-xl">
-                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-search"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-user"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </div>
-            <!-- Mobile Menu Button -->
-            <div class="lg:hidden flex space-x-4 items-center text-xl">
-                <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-search"></i></a>
-                <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-shopping-cart"></i></a>
-                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Sidebar -->
-    <div id="mobile-sidebar">
-        <div class="flex justify-between items-center p-4 border-b border-gray-200">
-            <h3 class="text-xl font-semibold">Menu</h3>
-            <button id="mobile-close-button" class="text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="sidebar-buttons">
-            <a href="#" class="sidebar-button-personal">Personal Gifts</a>
-            <a href="#" class="sidebar-button-corporate">Corporate Gifts</a>
-        </div>
-        <h4 class="sidebar-section-title">Shop by Categories</h4>
-        <div class="flex flex-col space-y-2 py-2">
-            <a href="#" class="sidebar-menu-item">Diwali Gifts</a>
-            <a href="#" class="sidebar-menu-item">Shop Gifts</a>
-            <a href="#" class="sidebar-menu-item">Make Your Own Hamper</a>
-            <a href="#" class="sidebar-menu-item">All Gifts</a>
-            <a href="#" class="sidebar-menu-item">New Arrivals</a>
-        </div>
-        <h4 class="sidebar-section-title">Company</h4>
-        <div class="flex flex-col space-y-2 py-2">
-            <a href="#" class="sidebar-menu-item">About Us</a>
-            <a href="#" class="sidebar-menu-item" onclick="navigateTo('contact')">Contact Us</a>
-        </div>
-    </div>
-
-    <!-- Mobile Overlay -->
-    <div id="mobile-overlay"></div>
+    <?php require __DIR__ . '/partials/navigation.php'; ?>
 
     <!-- Page Content Container -->
     <main>
