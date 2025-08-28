@@ -12,9 +12,9 @@ $title = 'Enquiry - Gifting Stories';
 require __DIR__ . '/partials/header.php';
 ?>
 <body class="text-gray-800">
-    <header class="bg-[#efe8e0] p-4 shadow-md">
+    <header class="bg-[var(--bg-light)] p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-3xl font-bold text-[#5C817C]">Gifting Stories</a>
+            <a href="/" class="text-3xl font-bold text-[var(--primary)]">Gifting Stories</a>
             <nav class="hidden lg:flex space-x-8 items-center">
                 <a href="/" class="nav-link">Home</a>
                 <a href="#" class="nav-link">Make Your Own Hamper</a>
@@ -48,7 +48,7 @@ require __DIR__ . '/partials/header.php';
                 <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded p-2"></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" class="bg-[#5C817C] text-white px-6 py-2 rounded hover:bg-[#4a6b65]">Submit</button>
+                <button type="submit" class="btn-primary text-white px-6 py-2 rounded">Submit</button>
             </div>
         </form>
     </main>
