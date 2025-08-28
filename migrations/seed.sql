@@ -28,3 +28,14 @@ INSERT INTO products (name, description, price, image_url, sort_order, active) V
 ('Self-Care Spa Kit','Relax and rejuvenate with this luxurious box.',1850,'https://placehold.co/400x400/D0D0D0/5C817C?text=Product+2',2,1),
 ('Gourmet Delight','A curated selection of artisanal snacks.',2100,'https://placehold.co/400x400/D0D0D0/5C817C?text=Product+3',3,1),
 ('The Desk Companion','Perfect for a new colleague or a work anniversary.',1500,'https://placehold.co/400x400/D0D0D0/5C817C?text=Product+4',4,1);
+
+-- Navigation menu
+INSERT INTO navigation_items (id, parent_id, label, link_url, image_url, sort_order, active) VALUES
+(1, NULL, 'Home', '/', NULL, 1, 1),
+(2, NULL, 'Shop Gifts', '#', NULL, 2, 1),
+(3, NULL, 'Make Your Own Hamper', '#', NULL, 3, 1),
+(4, NULL, 'About Us', '#', NULL, 4, 1),
+(5, NULL, 'Contact Us', '/#contact', NULL, 5, 1),
+(6, 2, 'Diwali Gifts', '#', NULL, 1, 1),
+(7, 2, 'All Gifts', '#', NULL, 2, 1),
+(8, 2, 'New Arrivals', '#', NULL, 3, 1);

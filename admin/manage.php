@@ -48,6 +48,18 @@ $resources = [
       'active'      => ['label' => 'Active', 'type' => 'checkbox'],
     ],
   ],
+  'navigation_items' => [
+    'table' => 'navigation_items',
+    'title' => 'Navigation Items',
+    'fields' => [
+      'label'      => ['label' => 'Label', 'type' => 'text'],
+      'link_url'   => ['label' => 'Link URL', 'type' => 'text'],
+      'image_url'  => ['label' => 'Image URL', 'type' => 'text'],
+      'parent_id'  => ['label' => 'Parent ID', 'type' => 'number'],
+      'sort_order' => ['label' => 'Sort Order', 'type' => 'number'],
+      'active'     => ['label' => 'Active', 'type' => 'checkbox'],
+    ],
+  ],
 ];
 
 $resource = $_GET['resource'] ?? 'banners';
