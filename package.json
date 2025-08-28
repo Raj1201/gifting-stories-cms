@@ -1,0 +1,17 @@
+{
+  "name": "gifting-stories-cms",
+  "version": "1.0.0",
+  "description": "This package modularizes your single-file site and adds a simple admin panel so your client can edit content without touching code.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./public/assets/css/styles.css -o ./public/assets/css/output.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
