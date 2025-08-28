@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../../includes/navigation.php';
 $nav = cms_get_navigation();
 ?>
 <!-- Header & Navigation -->
@@ -7,8 +6,19 @@ $nav = cms_get_navigation();
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="/" class="text-3xl font-bold text-[var(--primary)]">Gifting Stories</a>
         <div class="hidden lg:flex space-x-8 items-center">
-            <?php foreach ($nav['desktop'] as $link): ?>
-                <a href="<?= htmlspecialchars($link['url']) ?>" class="nav-link"><?= htmlspecialchars($link['label']) ?></a>
+            <?php foreach ($nav as $item): ?>
+                <?php if (!empty($item['children'])): ?>
+                    <div class="relative group">
+                        <a href="<?= htmlspecialchars($item['link_url']) ?>" class="nav-link"><?= htmlspecialchars($item['label']) ?></a>
+                        <div class="absolute left-0 mt-2 hidden group-hover:block bg-white border rounded shadow-lg">
+                            <?php foreach ($item['children'] as $child): ?>
+                                <a href="<?= htmlspecialchars($child['link_url']) ?>" class="block px-4 py-2 hover:bg-gray-100"><?= htmlspecialchars($child['label']) ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <a href="<?= htmlspecialchars($item['link_url']) ?>" class="nav-link"><?= htmlspecialchars($item['label']) ?></a>
+                <?php endif; ?>
             <?php endforeach; ?>
             <div class="flex space-x-4 items-center text-xl">
                 <a href="#" class="text-gray-700 hover:text-[var(--primary)]"><i class="fas fa-search"></i></a>
@@ -43,16 +53,14 @@ $nav = cms_get_navigation();
         <a href="#" class="sidebar-button-personal">Personal Gifts</a>
         <a href="#" class="sidebar-button-corporate">Corporate Gifts</a>
     </div>
-    <h4 class="sidebar-section-title">Shop by Categories</h4>
     <div class="flex flex-col space-y-2 py-2">
-        <?php foreach ($nav['categories'] as $link): ?>
-            <a href="<?= htmlspecialchars($link['url']) ?>" class="sidebar-menu-item"><?= htmlspecialchars($link['label']) ?></a>
-        <?php endforeach; ?>
-    </div>
-    <h4 class="sidebar-section-title">Company</h4>
-    <div class="flex flex-col space-y-2 py-2">
-        <?php foreach ($nav['company'] as $link): ?>
-            <a href="<?= htmlspecialchars($link['url']) ?>" class="sidebar-menu-item"><?= htmlspecialchars($link['label']) ?></a>
+        <?php foreach ($nav as $item): ?>
+            <a href="<?= htmlspecialchars($item['link_url']) ?>" class="sidebar-menu-item"><?= htmlspecialchars($item['label']) ?></a>
+            <?php if (!empty($item['children'])): ?>
+                <?php foreach ($item['children'] as $child): ?>
+                    <a href="<?= htmlspecialchars($child['link_url']) ?>" class="sidebar-menu-item ml-4"><?= htmlspecialchars($child['label']) ?></a>
+                <?php endforeach; ?>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 </div>

@@ -39,3 +39,26 @@ function cms_get_products() {
     $stmt = $pdo->query('SELECT id, name, description, price, image_url FROM products WHERE active = 1 ORDER BY sort_order ASC, id ASC');
     return $stmt->fetchAll();
 }
+
+function cms_get_navigation() {
+    global $pdo;
+    $stmt = $pdo->query('SELECT id, parent_id, label, link_url, image_url FROM navigation_items WHERE active = 1 ORDER BY sort_order ASC, id ASC');
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $byId = [];
+    foreach ($rows as $row) {
+        $row['children'] = [];
+        $byId[$row['id']] = $row;
+    }
+    $tree = [];
+    foreach ($byId as $id => &$item) {
+        if ($item['parent_id']) {
+            $parent = $item['parent_id'];
+            if (isset($byId[$parent])) {
+                $byId[$parent]['children'][] =& $item;
+            }
+        } else {
+            $tree[] =& $item;
+        }
+    }
+    return $tree;
+}
