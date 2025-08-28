@@ -31,11 +31,19 @@ INSERT INTO products (name, description, price, image_url, sort_order, active) V
 
 -- Navigation menu
 INSERT INTO navigation_items (id, parent_id, label, link_url, image_url, menu_type, sort_order, active) VALUES
-(1, NULL, 'Home', '/', NULL, 'link', 1, 1),
-(2, NULL, 'Shop Gifts', '#', NULL, 'mega', 2, 1),
-(3, NULL, 'Make Your Own Hamper', '#', NULL, 'link', 3, 1),
-(4, NULL, 'About Us', '#', NULL, 'link', 4, 1),
+(1, NULL, 'Make Your Own Hamper', '#', NULL, 'link', 1, 1),
+(2, NULL, 'About Us', '#', NULL, 'link', 2, 1),
+(3, NULL, 'Our Products/Hampers', '#', NULL, 'mega', 3, 1),
+(4, NULL, 'Home', '/', NULL, 'link', 4, 1),
 (5, NULL, 'Contact Us', '/#contact', NULL, 'link', 5, 1),
-(6, 2, 'Diwali Gifts', '#', NULL, 'link', 1, 1),
-(7, 2, 'All Gifts', '#', NULL, 'link', 2, 1),
-(8, 2, 'New Arrivals', '#', NULL, 'link', 3, 1);
+(6, 3, 'AI Hamper', '#', 'https://placehold.co/600x400?text=AI+Hamper', 'link', 1, 1),
+(7, 3, 'Corporate Appreciation Hampers', '#', 'https://placehold.co/600x400?text=Corporate+Appreciation+Hampers', 'link', 2, 1),
+(8, 3, 'Corporate/Diwali Hampers', '#', 'https://placehold.co/600x400?text=Corporate-Diwali+Hampers', 'link', 3, 1),
+(9, 3, 'Corporate-On Boarding Hampers', '#', 'https://placehold.co/600x400?text=Corporate-On+Boarding+Hampers', 'link', 4, 1),
+(10, 3, 'Wedding Hampers', '#', 'https://placehold.co/600x400?text=Wedding+Hampers', 'link', 5, 1),
+(11, 3, 'Room Hampers', '#', 'https://placehold.co/600x400?text=Room+Hampers', 'link', 6, 1),
+(12, 3, 'Trousseau Packaging', '#', 'https://placehold.co/600x400?text=Trousseau+Packaging', 'link', 7, 1),
+(13, 3, 'HALDI FAVOURS', '#', 'https://placehold.co/600x400?text=HALDI+FAVOURS', 'link', 8, 1),
+(14, 3, 'BRIDESMAID HAMPERS', '#', 'https://placehold.co/600x400?text=BRIDESMAID+HAMPERS', 'link', 9, 1),
+(15, 3, 'Baby Welcoming/Baby Shower Hampers', '#', 'https://placehold.co/600x400?text=Baby+Welcoming+Baby+Shower+Hampers', 'link', 10, 1),
+(16, 3, 'FESTIVE HAMPERS', '#', 'https://placehold.co/600x400?text=FESTIVE+HAMPERS', 'link', 11, 1);
