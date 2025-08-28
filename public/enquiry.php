@@ -12,17 +12,7 @@ $title = 'Enquiry - Gifting Stories';
 require __DIR__ . '/partials/header.php';
 ?>
 <body class="text-gray-800">
-    <header class="bg-[var(--bg-light)] p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-3xl font-bold text-[var(--primary)]">Gifting Stories</a>
-            <nav class="hidden lg:flex space-x-8 items-center">
-                <a href="/" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Make Your Own Hamper</a>
-                <a href="#" class="nav-link">About Us</a>
-                <a href="/#contact" class="nav-link">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+    <?php require __DIR__ . '/partials/navigation.php'; ?>
 
     <main class="container mx-auto py-10">
         <?php if ($submitted): ?>
