@@ -61,6 +61,15 @@
         .nav-link {
             @apply text-gray-700 hover:text-[var(--primary)] transition duration-300 ease-in-out font-medium;
         }
+        .menu-dropdown {
+            @apply grid grid-cols-2 md:grid-cols-3 gap-4 p-4 bg-white border rounded shadow-lg;
+        }
+        .menu-card {
+            @apply flex flex-col items-center text-center p-2 hover:bg-gray-100 rounded transition;
+        }
+        .menu-card img {
+            @apply w-24 h-24 object-cover rounded mb-2;
+        }
         .footer-link {
             @apply text-gray-400 hover:text-white transition duration-300;
         }
